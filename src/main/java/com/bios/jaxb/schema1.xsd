@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://mballem.com" xmlns:tns="http://mballem.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import schemaLocation="schema2.xsd"/>
+
+  <xs:complexType name="contato">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="nome" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element ref="Endereco"/>
+      <xs:element name="telefones" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="Telefone" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="endereco">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="logradouro" type="xs:string"/>
+      <xs:element name="bairro" type="xs:string"/>
+      <xs:element name="cep" type="xs:string"/>
+      <xs:element name="cidade" type="xs:string"/>
+      <xs:element name="complemento" type="xs:string" minOccurs="0"/>
+      <xs:element name="numero" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="telefone">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="ddd" type="xs:int"/>
+      <xs:element name="numero" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:ns1="http://mballem.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://mballem.com" schemaLocation="schema1.xsd"/>
+
+  <xs:element name="Contato" type="ns1:contato"/>
+
+  <xs:element name="Endereco" type="ns1:endereco"/>
+
+  <xs:element name="Telefone" type="ns1:telefone"/>
+
+
+
+</xs:schema>
+
